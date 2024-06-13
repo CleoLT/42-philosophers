@@ -11,7 +11,7 @@ MKDIR	= mkdir -p
 SRC_DIR = src/
 OBJ_DIR = obj/
 
-SRC_FILES = philo
+SRC_FILES = philo utils
 
 SRCS	= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS	= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))

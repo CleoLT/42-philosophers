@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
+/*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cle-tron <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/12 16:25:10 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/13 17:44:45 by cle-tron         ###   ########.fr       */
+/*   Created: 2024/06/13 14:49:22 by cle-tron          #+#    #+#             */
+/*   Updated: 2024/06/13 14:53:26 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-# define PHILO_H
-
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-# include "structures.h"
-
-int	ft_atoi(const char *str);
-int ft_isdigit(int c);
-
-#endif
+typedef struct s_rules
+{
+	int		nb_philo;
+	int		t_die;
+	int		t_eat;
+	int		t_sleep;
+	int		nb_eat;
+}	t_rules;
