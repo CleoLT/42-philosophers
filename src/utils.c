@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:39:50 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/13 17:44:49 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/14 13:34:12 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,11 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
+long long	get_time(void)
+{
+	struct timeval	tv;
+
+	gettimeofday(&tv, NULL);
+	printf("%ld\n",tv.tv_sec );
+	return(tv.tv_sec * 1000LL + tv.tv_usec / 1000);
+}
