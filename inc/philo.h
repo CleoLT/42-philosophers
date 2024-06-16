@@ -6,7 +6,7 @@
 /*   By: cle-tron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 16:25:10 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/14 17:29:55 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/16 20:41:57 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 # include <sys/time.h>
 
 # include "structures.h"
+
+//INIT
+void	init_rules(char **argv, t_rules *rules);
+void	init_index(int **index, int size);
 
 //UTILS
 int			ft_atoi(const char *str);

@@ -6,7 +6,7 @@
 /*   By: cle-tron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 16:43:02 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/14 17:22:45 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/16 16:34:30 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,37 +38,7 @@ int	error_syntax(char **argv)
 }
 
 
-t_philo	*init_philosophers(t_rules *rules)
-{
-	int		i;
-	t_philo	*philo;
-	
-	philo = malloc(sizeof(t_philo ) * rules->nb_philo);
-	i = 0;
-	while (i < rules->nb_philo)
-	{
-		philo[i].id = i;
-		philo[i].t_last_meal = 0;
-		philo[i].nb_meal = 0;
-		philo[i].rules = rules;
-		i++;
-	}
-	return (philo);
-}
 
-void	init_rules(char **argv, t_rules *rules)
-{
-	rules->nb_philo = ft_atoi(argv[1]);
-	rules->t_die = ft_atoi(argv[2]);
-	rules->t_eat = ft_atoi(argv[3]);
-	rules->t_sleep = ft_atoi(argv[4]);
-	if (argv[5])
-		rules->nb_eat = ft_atoi(argv[5]);
-	else
-		rules->nb_eat = -1;
-	rules->t_start = get_time();
-	rules->philo = init_philosophers(rules);
-}
 
 void	print_philos(t_philo *philo, int nb_philo)
 {
@@ -83,6 +53,7 @@ void	print_philos(t_philo *philo, int nb_philo)
 void	free_all(t_rules rules)
 {
 	free(rules.philo);
+	free(rules.forks);
 }
 
 int	main(int argc, char **argv)
@@ -98,12 +69,6 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	init_rules(argv, &rules);
 //	printf("%d, %d, %d, %d, %d, %lld\n", rules.nb_philo, rules.t_die, rules.t_eat, rules.t_sleep, rules.nb_eat, rules.t_start);
-//	printf(DIED);
-//	printf(FORK);
-//	printf(EAT);
-//	printf(SLEEP);
-//	printf(THINK);
-
 //	print_philos(rules.philo, rules.nb_philo);
 	exec_philo(&rules);
 	free_all(rules);
