@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 16:40:08 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/16 20:51:13 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/17 13:50:09 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,14 @@ void	init_index(int **index, int size)
 	*index = malloc(sizeof(int ) * size);
 	if (!*index)
 		return ;
-	if ( size%2 != 0 || size < 7)
+//	if ( size%2 != 0)
 		odd_index(index, size);
-	else
-		even_index(index, size);
-//	int i = 0;
-//	while (i <size)
-//		printf("%d ", (*index)[i++]);
+//	else
+//		even_index(index, size);
+	int i = 0;
+	while (i <size)
+		printf("%d ", (*index)[i++]);
+	printf("\n");
 }
 
 pthread_mutex_t *init_forks(t_rules *rules)
@@ -106,7 +107,7 @@ t_philo	*init_philosophers(t_rules *rules)
 	while (i < rules->nb_philo)
 	{
 		philo[i].id = i;
-		philo[i].t_last_meal = 0;
+		philo[i].t_last_meal = get_time();
 		philo[i].nb_meal = 0;
 		philo[i].rules = rules;
 		i++;
@@ -127,5 +128,7 @@ void	init_rules(char **argv, t_rules *rules)
 	rules->t_start = get_time();
 	rules->philo = init_philosophers(rules);
 	rules->forks = init_forks(rules);
+	pthread_mutex_init(&rules->print, NULL);
+	pthread_mutex_init(&rules->death, NULL);
 	rules->death_flag = 0;
 }

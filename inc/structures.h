@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 14:49:22 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/16 20:16:32 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/17 13:48:21 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # define EAT	" is eating\t\t\xF0\x9F\x8D\xBD"
 # define SLEEP	" is sleeping\t\t\xF0\x9F\x98\xB4"
 # define THINK	" is thinking\t\t\xF0\x9F\xA4\x94"
-# define DIED	" died\t\t\t\xF0\x9F\x92\x80"
+# define DEATH	" died\t\t\t\xF0\x9F\x92\x80"
 
 struct s_rules;
 
@@ -42,6 +42,8 @@ typedef struct s_rules
 	long long		t_start;
 	t_philo			*philo;
 	pthread_mutex_t	*forks;
+	pthread_mutex_t	print;
+	pthread_mutex_t	death;
 	int				death_flag;
 }	t_rules;
 

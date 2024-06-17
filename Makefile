@@ -3,7 +3,7 @@ NAME	= philo
 CC		= gcc
 RMF		= rm -f
 RMD		= rm -rf
-CFLAGS	= -Wall -Wextra -Werror -pthread  -g -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -pthread -g -fsanitize=thread 
 DEPFLAG	= -MMD -MP
 INCLUDE	= -I./inc
 MKDIR	= mkdir -p

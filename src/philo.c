@@ -6,7 +6,7 @@
 /*   By: cle-tron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 16:43:02 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/16 16:34:30 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/17 13:23:37 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,6 @@ int	error_syntax(char **argv)
 	}
 	return (EXIT_SUCCESS);
 }
-
-
-
 
 void	print_philos(t_philo *philo, int nb_philo)
 {
