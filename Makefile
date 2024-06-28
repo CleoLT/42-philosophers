@@ -3,7 +3,7 @@ NAME	= philo
 CC		= gcc
 RMF		= rm -f
 RMD		= rm -rf
-CFLAGS	= -Wall -Wextra -Werror -pthread -g -fsanitize=thread 
+CFLAGS	= -Wall -Wextra -Werror -pthread -g -fsanitize=thread
 DEPFLAG	= -MMD -MP
 INCLUDE	= -I./inc
 MKDIR	= mkdir -p
@@ -11,7 +11,7 @@ MKDIR	= mkdir -p
 SRC_DIR = src/
 OBJ_DIR = obj/
 
-SRC_FILES = philo init utils execute
+SRC_FILES = philo init utils execute finish
 
 SRCS	= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS	= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))

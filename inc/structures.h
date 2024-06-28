@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 14:49:22 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/17 13:48:21 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/28 17:04:52 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,11 @@ typedef struct s_rules
 	int				nb_eat;
 	long long		t_start;
 	t_philo			*philo;
+	pthread_t		finish;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	print;
 	pthread_mutex_t	death;
 	int				death_flag;
 }	t_rules;
-
-
 
 #endif
