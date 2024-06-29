@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 14:49:22 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/28 17:04:52 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/29 18:55:58 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ typedef struct s_philo
 typedef struct s_rules
 {
 	int				nb_philo;
-	int				t_die;
-	int				t_eat;
-	int				t_sleep;
+	long long		t_die;
+	long long		t_eat;
+	long long		t_sleep;
 	int				nb_eat;
 	long long		t_start;
 	t_philo			*philo;
@@ -45,6 +45,8 @@ typedef struct s_rules
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	print;
 	pthread_mutex_t	death;
+	pthread_mutex_t	last_meal;
+	pthread_mutex_t	count_meal;
 	int				death_flag;
 }	t_rules;
 

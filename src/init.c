@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 16:40:08 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/28 16:25:10 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/29 18:12:10 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,5 +159,7 @@ void	init_rules(char **argv, t_rules *rules)
 	rules->forks = init_forks(rules);
 	pthread_mutex_init(&rules->print, NULL);
 	pthread_mutex_init(&rules->death, NULL);
+	pthread_mutex_init(&rules->last_meal, NULL);
+	pthread_mutex_init(&rules->count_meal, NULL);
 	rules->death_flag = 0;
 }

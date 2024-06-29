@@ -6,7 +6,7 @@
 /*   By: cle-tron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 16:25:10 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/28 17:04:44 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/29 16:34:40 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ void	exec_philo(t_rules *rules);
 void	print_action(t_philo *philo, char *action);
 
 //FINISH
-void	*check_finished(void *data);
+void	*check_end(void *data);
 
 #endif
