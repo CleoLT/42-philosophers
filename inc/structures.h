@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 14:49:22 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/29 18:55:58 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/30 16:46:36 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define THINK	" is thinking\t\t\xF0\x9F\xA4\x94"
 # define DEATH	" died\t\t\t\xF0\x9F\x92\x80"
 
-struct s_rules;
+struct	s_rules;
 
 typedef struct s_philo
 {
@@ -29,6 +29,7 @@ typedef struct s_philo
 	pthread_t		thread;
 	long long		t_last_meal;
 	int				nb_meal;
+	int				is_eating;
 	struct s_rules	*rules;
 }	t_philo;
 

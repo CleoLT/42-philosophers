@@ -6,7 +6,7 @@
 /*   By: cle-tron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 16:43:02 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/28 16:30:04 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/30 16:43:25 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	error_syntax(char **argv)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	while (argv[i])
@@ -37,16 +37,6 @@ int	error_syntax(char **argv)
 	return (EXIT_SUCCESS);
 }
 
-void	print_philos(t_philo *philo, int nb_philo)
-{
-	int i = 0;
-	while (i < nb_philo)
-	{
-		printf("philo id : %d\t", philo[i].id);
-		i++;
-	}
-}
-
 void	free_all(t_rules rules)
 {
 	free(rules.philo);
@@ -65,8 +55,6 @@ int	main(int argc, char **argv)
 	if (error_syntax(argv))
 		return (EXIT_FAILURE);
 	init_rules(argv, &rules);
-//	printf("%d, %d, %d, %d, %d, %lld\n", rules.nb_philo, rules.t_die, rules.t_eat, rules.t_sleep, rules.nb_eat, rules.t_start);
-//	print_philos(rules.philo, rules.nb_philo);
 	exec_philo(&rules);
 	free_all(rules);
 	return (EXIT_SUCCESS);

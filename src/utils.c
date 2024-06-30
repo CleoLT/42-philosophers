@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:39:50 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/15 18:05:13 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/30 16:45:14 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,5 @@ long long	get_time(void)
 	struct timeval	tv;
 
 	gettimeofday(&tv, NULL);
-//	printf("%ld\n",tv.tv_sec );
-	return(tv.tv_sec * 1000LL + tv.tv_usec / 1000);
+	return (tv.tv_sec * 1000LL + tv.tv_usec / 1000);
 }
