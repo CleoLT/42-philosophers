@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:08:16 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/30 16:31:29 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/30 17:18:45 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void	ft_wait(t_philo *philo, int wait)
 
 void	ft_sleep(t_philo *philo)
 {
-	ft_wait(philo, philo->rules->t_sleep);
 	print_action(philo, SLEEP);
+	ft_wait(philo, philo->rules->t_sleep);
 }
 
 void	ft_eating(t_philo *philo)
@@ -59,9 +59,9 @@ void	ft_eating(t_philo *philo)
 	philo->t_last_meal = get_time();
 	pthread_mutex_unlock(&philo->rules->last_meal);
 	ft_wait(philo, philo->rules->t_eat);
-	pthread_mutex_unlock(&philo->rules->forks[sec_fork]);
-	pthread_mutex_unlock(&philo->rules->forks[first_fork]);
 	pthread_mutex_lock(&philo->rules->last_meal);
 	philo->is_eating = 0;
 	pthread_mutex_unlock(&philo->rules->last_meal);
+	pthread_mutex_unlock(&philo->rules->forks[sec_fork]);
+	pthread_mutex_unlock(&philo->rules->forks[first_fork]);
 }

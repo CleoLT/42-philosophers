@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 16:18:23 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/30 16:44:48 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/06/30 17:14:46 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	check_nb_meal(t_rules *rules)
 		pthread_mutex_unlock(&rules->death);
 		return (1);
 	}
-	usleep(100);
+//	usleep(100);
 	return (0);
 }
 
