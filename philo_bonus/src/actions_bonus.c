@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:08:16 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/07/03 17:06:23 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/07/05 13:38:43 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	print_action(t_philo *philo, char *action)
 	time = get_time() - philo->rules->t_start;
 	if (sem_wait(philo->rules->print) == -1)
 		return ;
-	if (!check_death_flag(philo))
+//	if (!check_death_flag(philo))
+//	if (!philo->death_flag)	
 		printf("%06lld\t%d\t%s\n", time, philo->id + 1, action);
 	if (sem_post(philo->rules->print) == -1)
 		return ;
@@ -30,7 +31,10 @@ void	ft_wait(t_philo *philo, int wait)
 	long long	time;
 
 	time = get_time();
-	while (!check_death_flag(philo))
+//	while (!check_death_flag(philo))
+//	while(!philo->death_flag)
+	philo = (void *)philo;
+	while (1)
 	{
 		if (get_time() - time >= wait)
 			break ;
@@ -62,7 +66,7 @@ void	ft_eating(t_philo *philo)
 	philo->nb_meal++;
 	philo->is_eating = 1;
 	philo->t_last_meal = get_time();
-	printf("%lld t_lastmeal actualizacion\n", philo->t_last_meal);
+//	printf("%lld t_lastmeal actualizacion\n", philo->t_last_meal);
 	if (sem_post(philo->rules->last_meal) == -1)
 		return ;
 	ft_wait(philo, philo->rules->t_eat);

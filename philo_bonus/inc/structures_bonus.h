@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 14:49:22 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/07/03 18:02:35 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:30:54 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_philo
 {
 	int				id;
 	pthread_t		end_check;
+	int				death_flag;
 	pid_t			pid;
 	long long		t_last_meal;
 	int				nb_meal;
@@ -43,12 +44,12 @@ typedef struct s_rules
 	int				nb_eat;
 	long long		t_start;
 	t_philo			*philo;
-	pthread_t		end_check;
+//	pthread_t		end_check;
 	sem_t			*forks;
 	sem_t			*print;
 	sem_t			*death;
 	sem_t			*last_meal;
-	int				death_flag;
+	int				death_flag; //SUPPRIMER ?
 }	t_rules;
 
 #endif

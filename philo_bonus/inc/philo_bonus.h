@@ -6,7 +6,7 @@
 /*   By: cle-tron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 16:25:10 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/07/03 16:24:04 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:31:41 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <semaphore.h>
 # include <fcntl.h>
 # include <signal.h>
+# include <sys/wait.h>
 # include <sys/types.h>
 # include <unistd.h>
 

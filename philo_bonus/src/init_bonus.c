@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 16:40:08 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/07/03 17:07:34 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:38:13 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ t_philo	*init_philosophers(t_rules *rules)
 		philo[i].nb_meal = 0;
 		philo[i].rules = rules;
 		philo[i].is_eating = 0;
+		philo[i].death_flag = 0;
 		i++;
 	}
 	return (philo);
