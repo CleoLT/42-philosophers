@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 16:35:59 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/07/08 15:21:46 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/07/08 15:54:47 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@ void	kill_and_close_sem(t_philo *philo)
 	while (i < philo->rules->nb_philo)
 	{
 		waitpid(-1, &status, 0);
-	//	if (WEXITSTATUS(status) == 1)
 		if (status != 0)
 		{
 			i = 0;
 			while (i < philo->rules->nb_philo)
 				kill(philo->rules->philo[i++].pid, SIGKILL);
-			break;
+			break ;
 		}
 		i++;
 	}
@@ -37,8 +36,9 @@ void	kill_and_close_sem(t_philo *philo)
 		return ;
 	sem_unlink("/forks");
 	sem_unlink("/print");
-	sem_unlink("/last_meal");	
+	sem_unlink("/last_meal");
 }
+//	if (WEXITSTATUS(status) == 1)
 
 void	philo_routine(t_philo *philo)
 {
@@ -74,7 +74,7 @@ void	exec_philo(t_rules *rules)
 			return ;
 		if (rules->philo[i].pid == 0)
 			philo_routine(&rules->philo[i]);
-		usleep(500);
+		usleep(200);
 		i++;
 	}
 	kill_and_close_sem(rules->philo);

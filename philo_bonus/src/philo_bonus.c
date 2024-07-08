@@ -6,7 +6,7 @@
 /*   By: cle-tron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 16:43:02 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/07/02 14:46:18 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/07/08 15:35:39 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,6 @@ int	error_syntax(char **argv)
 	return (EXIT_SUCCESS);
 }
 
-void	free_all(t_rules rules)
-{
-	if (rules.philo)
-		free(rules.philo);
-//	if (rules.forks)
-//		free(rules.forks);
-}
-
 int	main(int argc, char **argv)
 {
 	t_rules	rules;
@@ -62,6 +54,7 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	init_rules(argv, &rules);
 	exec_philo(&rules);
-	free_all(rules);
+	if (rules.philo)
+		free(rules.philo);
 	return (EXIT_SUCCESS);
 }

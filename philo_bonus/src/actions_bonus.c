@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:08:16 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/07/08 13:55:53 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/07/08 15:53:46 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_wait(t_philo *philo, int wait)
 	{
 		if (get_time() - time >= wait)
 			break ;
-	//	usleep(150);
+		usleep(150);
 	}
 }
 
@@ -57,7 +57,6 @@ void	ft_eating(t_philo *philo)
 		return ;
 	philo->is_eating = 1;
 	philo->t_last_meal = get_time();
-//	printf("philo %d : %lld t_lastmeal actualizacion\n", philo->id + 1, philo->t_last_meal);
 	if (sem_post(philo->rules->last_meal) == -1)
 		return ;
 	ft_wait(philo, philo->rules->t_eat);

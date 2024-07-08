@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 16:40:08 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/07/08 13:53:33 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/07/08 15:53:46 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ t_philo	*init_philosophers(t_rules *rules)
 	{
 		philo[i].id = i;
 		philo[i].t_last_meal = get_time();
-		printf("%lld t_lastmeal init\n", philo[i].t_last_meal);
 		philo[i].nb_meal = 0;
 		philo[i].rules = rules;
 		philo[i].is_eating = 0;
