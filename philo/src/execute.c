@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 16:35:59 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/07/02 11:48:39 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:58:16 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,7 @@ void	join_and_destroy(int *idx, t_rules *rules)
 	}
 	if (pthread_mutex_destroy(&rules->print) || \
 		pthread_mutex_destroy(&rules->death) || \
-		pthread_mutex_destroy(&rules->last_meal) || \
-		pthread_mutex_destroy(&rules->count_meal))
+		pthread_mutex_destroy(&rules->last_meal))
 		return ;
 	if (idx)
 		free(idx);

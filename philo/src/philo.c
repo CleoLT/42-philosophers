@@ -6,7 +6,7 @@
 /*   By: cle-tron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 16:43:02 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/07/02 11:23:15 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/07/02 12:49:35 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,18 @@ int	error_syntax(char **argv)
 			j++;
 		while (argv[i][j] != '\0')
 		{
-			if (!ft_isdigit(argv[i][j]))
+			if (!ft_isdigit(argv[i][j++]))
 			{
 				write(2, "philosophers accept only positive numbers\n", 42);
 				return (EXIT_FAILURE);
 			}
-			j++;
 		}
 		i++;
+	}
+	if (ft_atoi(argv[1]) == 0)
+	{
+		write(2, "error: type almost 1 philosopher\n", 33);
+		return (EXIT_FAILURE);
 	}
 	return (EXIT_SUCCESS);
 }

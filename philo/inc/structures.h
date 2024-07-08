@@ -6,7 +6,7 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 14:49:22 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/06/30 16:46:36 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/07/02 14:28:49 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ typedef struct s_rules
 	pthread_mutex_t	print;
 	pthread_mutex_t	death;
 	pthread_mutex_t	last_meal;
-	pthread_mutex_t	count_meal;
 	int				death_flag;
 }	t_rules;
 
