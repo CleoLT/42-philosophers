@@ -6,7 +6,7 @@
 /*   By: cle-tron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 16:43:02 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/07/08 15:35:39 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/07/08 16:28:46 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 	if (error_syntax(argv))
+		return (EXIT_FAILURE);
+	if (argc == 6 && ft_atoi(argv[5]) == 0)
 		return (EXIT_FAILURE);
 	init_rules(argv, &rules);
 	exec_philo(&rules);
