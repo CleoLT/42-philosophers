@@ -6,7 +6,7 @@
 /*   By: cle-tron <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 16:25:10 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/07/04 16:31:41 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/07/08 13:51:53 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@
 
 //INIT
 void		init_rules(char **argv, t_rules *rules);
-void		init_index(int **index, int size);
-void		init_forks_id(int *first, int *sec, int id, int size);
 
 //UTILS
 int			ft_atoi(const char *str);
@@ -39,7 +37,6 @@ long long	get_time(void);
 
 //EXEC
 void		exec_philo(t_rules *rules);
-int			check_death_flag(t_philo *philo);
 
 //ACTIONS
 void		print_action(t_philo *philo, char *action);

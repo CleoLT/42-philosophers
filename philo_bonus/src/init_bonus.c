@@ -6,75 +6,11 @@
 /*   By: cle-tron <cle-tron@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 16:40:08 by cle-tron          #+#    #+#             */
-/*   Updated: 2024/07/04 16:38:13 by cle-tron         ###   ########.fr       */
+/*   Updated: 2024/07/08 13:53:33 by cle-tron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo_bonus.h"
-
-void	init_forks_id(int *first, int *sec, int id, int size)
-{
-	if (id == 0)
-		*first = size - 1 ;
-	else if (id % 2 == 0)
-		*first = id - 1;
-	else if (id % 2 != 0)
-		*first = id;
-	if (id % 2 != 0)
-		*sec = id - 1;
-	else
-		*sec = id;
-}
-
-void	init_index(int **index, int size)
-{
-	int	i;
-	int	value;
-
-	*index = malloc(sizeof(int ) * size);
-	if (!*index)
-		return ;
-	i = 0;
-	value = 0;
-	while (value < size)
-	{
-		(*index)[i] = value;
-		i++;
-		value += 2;
-	}
-	value = 1;
-	while (i < size)
-	{
-		(*index)[i] = value;
-		i++;
-		value += 2;
-	}
-}
-/*	i = 0;
-	while (i <size)
-		printf("%d ", (*index)[i++] + 1);
-	printf("\n");
-*/
-
-/*
-pthread_mutex_t	*init_forks(t_rules *rules)
-{
-	int				i;
-	pthread_mutex_t	*mutex;
-
-	mutex = malloc(sizeof(pthread_mutex_t) * rules->nb_philo);
-	if (!mutex)
-		return (NULL);
-	i = 0;
-	while (i < rules->nb_philo)
-	{
-		if (pthread_mutex_init(&mutex[i], NULL))
-			return (NULL);
-		i++;
-	}
-	return (mutex);
-}
-*/
 
 t_philo	*init_philosophers(t_rules *rules)
 {
@@ -93,7 +29,6 @@ t_philo	*init_philosophers(t_rules *rules)
 		philo[i].nb_meal = 0;
 		philo[i].rules = rules;
 		philo[i].is_eating = 0;
-		philo[i].death_flag = 0;
 		i++;
 	}
 	return (philo);
@@ -117,10 +52,8 @@ void	init_rules(char **argv, t_rules *rules)
 	sem_unlink("/last_meal");
 	rules->forks = sem_open("/forks", O_CREAT, 0700, rules->nb_philo);
 	rules->print = sem_open("/print", O_CREAT, 0700, 1);
-	rules->death =  sem_open("/death", O_CREAT, 0700, 1);
 	rules->last_meal = sem_open("/last_meal", O_CREAT, 0700, 1);
 	if (rules->forks == SEM_FAILED || rules->print == SEM_FAILED || \
-		rules->death == SEM_FAILED || rules->last_meal == SEM_FAILED)
+		rules->last_meal == SEM_FAILED)
 		return ;
-	rules->death_flag = 0;
 }
